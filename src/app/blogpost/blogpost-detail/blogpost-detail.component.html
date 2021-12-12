@@ -1,0 +1,34 @@
+
+    <section class="blog-detail mtb-40">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="blog-left" *ngIf="blogs | async as blog else loading">
+              <h1>{{blog.title}}</h1>
+              <div class="posted-on">
+                  <p>
+                    by <span>{{blog.author}}</span> on 
+                    <span>{{blog.created_at | date:'mediumDate'}}</span>
+                  </p>
+              </div>
+              <div class="detail-img">
+                 <img src="{{blog.image}}" width="400px" alt="{{blog.title}}" />
+              </div>
+              <div class="blog-desc">{{blog.short_desc}}</div>
+            </div>
+             <ng-template #loading>
+                <div errorclass="error">
+                  <h3>{{error.errorTitle}}</h3>
+                  <p>{{error.errorDesc}}<p>
+                 
+                </div>
+            </ng-template>
+          </div>
+           <div class="col-md-4">
+
+            <app-blogpost-recent></app-blogpost-recent>
+            <app-categories></app-categories>
+          </div>
+        </div>
+      </div>
+    </section>

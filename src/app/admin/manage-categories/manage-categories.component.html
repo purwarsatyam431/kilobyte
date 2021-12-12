@@ -1,0 +1,85 @@
+<button class="btn btn-primary" data-toggle="modal" data-target="#catagory">+Add catagory</button>
+<hr>
+
+<table class="table">
+    <tbody>
+      <tr *ngFor="let category of categoryName; let i=index">
+        <td>{{category.name}}</td>
+        <td><button class="btn btn-outline-warning btn-sm" (click)="onEditCategory(category.userId)" data-target="#editCategory" data-toggle="modal"><mat-icon>edit</mat-icon></button> &nbsp;
+<button class="btn btn-outline-danger btn-sm" (click)="onDeleteCategory(category.userId)" data-target="#deleteCategory" data-toggle="modal"><mat-icon>delete</mat-icon></button></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+<form>
+    <div class="modal" role="dialog" id="catagory" style="background-color: white; ">
+        <div class="modal-dailog" style="margin: auto;  width: 500px;">
+            <div class="modal-contant">
+                <div class="modal-header">
+                    <div class="modal-title">Add Catagory</div>
+                    <button class="close btn btn-light" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <label for="newCatagory">Catagory name</label>
+                    <input type="text" id="newCatagory" class="form-control" name="name" [(ngModel)]="new_Category.name" placeholder="CategoryName" required>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" data-dismiss="modal" (click)="onSave()">Save</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+<!-- editCategory -->
+<form>
+    <div class="modal" role="dialog" id="editCategory" style="background-color: white; ">
+        <div class="modal-dailog" style="margin: auto;  width: 500px;">
+            <div class="modal-contant">
+                <div class="modal-header">
+                    <div class="modal-title">Edit Catagory</div>
+                    <button class="close btn btn-light" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <label for="editCatagory">Catagory name</label>
+                    <input type="text" id="editCatagory" name="name" [(ngModel)]="editCategory.name" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" (click)="onEditConfirm()" data-dismiss="modal" >Save</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form> 
+
+<!-- Delete Category -->
+<form>
+    <div class="modal" role="dialog" id="deleteCategory" style="background-color: white; ">
+        <div class="modal-dailog" style="margin: auto;  width: 500px;">
+            <div class="modal-contant">
+                <div class="modal-header">
+                    <div class="modal-title">Delete Catagory</div>
+                    <button class="close btn btn-light" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- <label for="deleteCatagoryId">Catagory name</label> -->
+                    <!-- <input type="text" id="deleteCatagoryId" name="id" [(ngModel)]="deleteCategory.userid" disabled class="form-control"> -->
+
+                    <label for="deleteCatagoryName">Catagory name</label>
+                    <input type="text" id="deleteCatagoryName" name="name" [(ngModel)]="deleteCategory.name" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" data-dismiss="modal" (click)="onDeleteConfirm()" >Delete</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form> 

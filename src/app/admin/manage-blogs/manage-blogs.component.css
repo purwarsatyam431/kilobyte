@@ -1,0 +1,8 @@
+tr,td,table,th{
+    border:1px solid lightgrey ;
+    text-align: center;
+}
+.btn-sm{
+border: 0;
+    padding: 0 0px;
+}

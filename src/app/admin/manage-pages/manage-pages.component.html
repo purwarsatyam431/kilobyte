@@ -1,0 +1,61 @@
+<table class="table">
+    <tr *ngFor="let a of about; let i=index">
+        <td><img src="{{a.image}}" alt="dd" width="200px" height="200px"></td>
+        <td>{{a.desc}}</td>
+        <td><button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#editAboutUs"  (click)="onEditPage(a.userId)"><mat-icon>edit</mat-icon></button></td>
+    </tr>
+</table>
+
+<hr>
+<h3>Contact Details</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Message</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let contact of contacts">
+    <td>{{contact.name}}</td>
+    <td>{{contact.email}}</td>
+    <td>{{contact.phone}}</td>
+    <td>{{contact.message}}</td>
+</tr>
+</tbody>
+</table>
+
+ 
+<form>
+    <div class="modal" role="dialog" id="editAboutUs" style="background-color: white; ">
+        <div class="modal-dailog" style="margin: auto;  width: 500px;">
+            <div class="modal-contant">
+                <div class="modal-header">
+                    <div class="modal-title">Edit Fields</div>
+                    <button class="close btn btn-light" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <label for="editId">ID</label>
+                    <input type="text" id="editId" name="id" [(ngModel)]="editAbout.id" disabled class="form-control">
+
+                    <label for="editTitle">Title</label>
+                    <input type="text" id="editTitle" name="title" [(ngModel)]="editAbout.title" class="form-control">
+
+                    <label for="editDesc">Description</label>
+                    <input type="text" id="editDesc" name="desc" [(ngModel)]="editAbout.desc" class="form-control">
+
+                    <label for="editImg">Image</label>
+                   <input type="file" name="Image" id="editImg" [(ngModel)]="editAbout.image" (change)="selectImg($event)" class="form-control">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" data-dismiss="modal" (click)= "onEditConfirm()">Save</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>  

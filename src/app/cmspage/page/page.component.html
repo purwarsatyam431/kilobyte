@@ -1,0 +1,18 @@
+
+<section class="blog-list mtb-40">
+  <div class="container">
+<div class="row"  *ngFor="let about of about">
+  <div class="col-md-4" align="center">
+    <img src="{{about.image}}" alt="" height="400" width="300">
+  </div>
+  <div class="col-md-8" >
+    <h1>{{about.title}}</h1>
+    <p>{{about.desc}}</p>
+  </div>
+</div>
+<div class="service-error" *ngIf="error">
+  <h1>{{error.errorTitle}}</h1>
+  <h3>{{error.errorDesc}}</h3>
+</div>
+</div>
+</section>

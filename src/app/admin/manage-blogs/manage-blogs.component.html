@@ -1,0 +1,185 @@
+
+    <button class="btn btn-primary" data-toggle="modal" data-target="#newModal">+Add Blog</button>
+
+
+<table class="table" >
+
+<tr >
+    <th>Id</th>
+    <th>Author</th>
+    <th>Image</th>
+    <th>Date</th>
+    <th>Action</th>
+</tr>
+<tr *ngFor="let data of datas;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{data.author}}</td>
+    <td><img src="{{data.image}}"></td>
+    <td>{{data.created_at}}</td>
+    <td><button class="btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#editModal"
+        (click)="onEditClick(data.userId)" ><mat-icon>edit</mat-icon></button>&nbsp;
+    <button class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#deleteModal" (click)="onDelete(data.userId)"><mat-icon>delete</mat-icon></button></td>
+
+</tr>
+</table>
+
+
+<!-- add blogs -->
+
+<form>
+    <div class="modal " role="dialog" id="newModal" style="background-color: white;">
+      <div class="modal-dailog">
+          <div class="modal-contant" style="width: 700px; margin: auto;">
+              <div class="modal-header">
+                  <div class="modal-tittle">Add Blog</div>
+                  <button class="close btn btn-light"  data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group row">
+                    <label for="blogTitle" class="col-sm-4 col-form-label">Blog Title</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="blogTitle" style="width: 200px;" class="form-control"
+                         placeholder="Title" name="BlogTitle" [(ngModel)]="newBlog.title" >
+                    </div>
+                </div>
+      
+    
+              
+                  <div class="form-group row">
+                      <label for="author" class="col-sm-4 col-form-label">Author</label>
+                      <div class="col-sm-8">
+                          <input type="text" id="author" style="width: 200px;" 
+                          class="form-control" placeholder="Author" name="Author" [(ngModel)]="newBlog.author">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="image" class="col-sm-4 col-form-label">Image</label>
+                    <div class="col-sm-8">
+                        <input type="file" name="Image" id="image" (change)="selectImg($event)" [(ngModel)]="newBlog.image">
+                        <!-- <input type="text" id="image" style="width: 200px;"  -->
+                        <!-- class="form-control" placeholder="Image" name="Image" [(ngModel)]="newBlog.image"> -->
+                    </div>
+                </div>
+    
+                
+                  <div class="form-group row">
+                      <label for="Date" class="col-sm-4 col-form-label">Date</label>
+                      <div class="col-sm-8">
+                          <input type="date" id="date" style="width: 200px;" class="form-control"
+                           placeholder="Date" name="Date" [(ngModel)]="newBlog.created_at">
+                      </div>
+                  </div>
+        
+    
+                  <div class="form-group row">
+                    <label for="description" class="col-sm-4 col-form-label">Description</label>
+                    <div class="col-sm-8">
+                        <textarea name="BlogDescription" id="description" cols="250" rows="10" [(ngModel)]="newBlog.short_desc" class="form-control"></textarea>
+                        <!-- <input type="text" id="description" style="width: 200px;"  
+                        class="form-control" placeholder="description" name="BlogDescription" [(ngModel)]="newBlog.short_desc" >-->
+                    </div>
+                </div>
+     
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal"  (click)="onSaveClick()">Save</button>
+                  <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+              </div>
+          </div>
+      </div>
+    </div>
+    </form>
+<!-- Edit model -->
+
+<form>
+    <div class="modal " role="dialog" id="editModal" style="background-color: white;">
+      <div class="modal-dailog">
+          <div class="modal-contant" style="width: 700px; margin: auto;">
+              <div class="modal-header">
+                  <div class="modal-tittle">Edit Blog</div>
+                  <button class="close btn btn-light"  data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                  
+                  <div class="form-group row">
+                    <label for="editBlogTitle" class="col-sm-4 col-form-label">Blog Title</label>
+                    <div class="col-sm-8">
+                        <input type="text" id="editBlogTitle" style="width: 200px;" class="form-control"
+                         placeholder="Title" name="BlogTitle" [(ngModel)]="editBlog.title" >
+                    </div>
+                </div>
+      
+    
+              
+                  <div class="form-group row">
+                      <label for="editAuthor" class="col-sm-4 col-form-label">Author</label>
+                      <div class="col-sm-8">
+                          <input type="text" id="editAuthor" style="width: 200px;" 
+                          class="form-control" placeholder="Author" name="Author" [(ngModel)]="editBlog.author">
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="editImage" class="col-sm-4 col-form-label">Image</label>
+                    <div class="col-sm-8">
+                        <input type="file" name="Image" id="editImage"  (change)="onSelectFile($event)" [(ngModel)]="editBlog.image">
+                       
+                    </div>
+                </div>
+    
+                <img [src]="editBlog.image" alt="dd">
+                  <div class="form-group row">
+                      <label for="Editdate" class="col-sm-4 col-form-label">Date</label>
+                      <div class="col-sm-8">
+                          <input type="date" id="editDate" style="width: 200px;" class="form-control"
+                           placeholder="Date" name="Date" [(ngModel)]="editBlog.created_at">
+                      </div>
+                  </div>
+        
+    
+                  <div class="form-group row">
+                    <label for="editDescription" class="col-sm-4 col-form-label">Description</label>
+                    <div class="col-sm-8">
+                        <textarea name="BlogDescription" id="editDescription" cols="250" rows="10" [(ngModel)]="editBlog.short_desc" class="form-control"></textarea>
+                       
+                    </div>
+                </div>
+     
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal"  (click)="onEditUpdate()">Save</button>
+                  <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+              </div>
+          </div>
+      </div>
+    </div>
+    </form>
+
+
+<!-- Delete Blog -->
+
+<form>
+    <div class="modal " role="dialog" id="deleteModal" style="background-color: white;">
+      <div class="modal-dailog">
+          <div class="modal-contant" style="width: 700px; margin: auto;">
+              <div class="modal-header">
+                  <div class="modal-tittle">Delete Blog</div>
+                  <button class="close btn btn-light"  data-dismiss="modal"><span>&times;</span></button>
+              </div>
+              <div class="modal-body">
+                   <div class="form-group row">
+                      <label for="txtDeleteTxt" class="col-sm-4 col-form-label">ID</label>
+                      <div class="col-sm-8">
+                          <input type="text" id="txtDeleteTxt" style="width: 100px;"
+                           class="form-control" placeholder=" title" name="title" [(ngModel)]="deleteBlog.title">
+                      </div>
+                  </div>
+                </div>
+              <div class="modal-footer">
+                <button class="btn btn-success" data-dismiss="modal"  (click)="onDeleteConfirm()">Delete</button>
+                  <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    </form> 

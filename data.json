@@ -1,0 +1,199 @@
+{
+  "blog-list": [
+    {
+      "id": 3,
+      "title": "Blog3",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam@",
+      "author": "Sonuu",
+      "image": "assets/blog1.jpg",
+      "created_at": "2021-06-10"
+    },
+    {
+      "id": 4,
+      "title": "Blog4",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam!",
+      "author": "satyam",
+      "image": "assets/blog1.jpg",
+      "created_at": "2021-06-06"
+    },
+    {
+      "id": 5,
+      "title": "Blog5",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam!",
+      "author": "Mr.Purwar",
+      "image": "assets/blog1.jpg",
+      "created_at": "2020-06-12"
+    },
+    {
+      "id": 6,
+      "title": "Blog6",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam!",
+      "author": "Aniket",
+      "image": "assets/blog1.jpg",
+      "created_at": "2021-06-09"
+    }
+  ],
+  "blog-feature": [
+    {
+      "id": 1,
+      "title": "Blog1",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam!",
+      "author": "Akshat",
+      "image": "assets/blog1.jpg",
+      "created_at": "12-01-1990"
+    },
+    {
+      "id": 2,
+      "title": "Blog2",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam!",
+      "author": "shubham",
+      "image": "assets/blog1.jpg",
+      "created_at": "12-01-1990"
+    },
+    {
+      "id": 3,
+      "title": "Blog3",
+      "short_desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio iure hic minus labore assumenda ipsa asperiores accusamus aliquid doloremque? Veniam!",
+      "author": "satyam",
+      "image": "assets/blog1.jpg",
+      "created_at": "12-01-1990"
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "social media"
+    },
+    {
+      "id": 2,
+      "name": "Technology"
+    },
+    {
+      "id": 3,
+      "name": "Jokes"
+    },
+    {
+      "id": 4,
+      "name": "Bollywood Gossip"
+    },
+    {
+      "id": 5,
+      "name": "Politics"
+    },
+    {
+      "id": 5,
+      "name": "Stock market"
+    },
+    {
+      "id": 6,
+      "name": "Social Media influncers"
+    },
+    {
+      "id": 7,
+      "name": "News Papers"
+    },
+    {
+      "id": 8,
+      "name": "Mauto ka soudagar"
+    },
+    {
+      "name": "Book you ticket",
+      "id": 11
+    }
+  ],
+  "about": [
+    {
+      "id": 1,
+      "title": "Hi, thanks for visiting my site.",
+      "desc": "With over a decade of development experience in a number of industries I realized that the typical product creation process between clients and developers was flawed. All too often developers rarely communicate to clients throughout the development stage, resulting in a final product that fails to reach the goal sought by the customer and end user.  For this reason I decided to utilize a completely different development pattern that focuses on highly focused communication and transparent design patterns. When I take on a project not only do I work to craft the application according to the client's specifications, I give daily updates to ensure that the project is aligning properly with the client's goals. The end result is the right product, delivered on time, and on budget.(from Satyam Purwar)",
+      "image": "assets/satsblog.jpg"
+    }
+  ],
+  "contact": [
+    {
+      "name": "satyam",
+      "email": "pur@gmail.com",
+      "phone": "908908908",
+      "message": "when will you send me a new blog\n",
+      "id": 1
+    },
+    {
+      "name": "SATYAM PURWAR",
+      "email": "Satyam.purwar.92@facebook.com",
+      "message": "s",
+      "id": 2
+    },
+    {
+      "name": "SATYAM PURWAR",
+      "email": "1234",
+      "message": "d",
+      "id": 3
+    },
+    {
+      "name": "SATYAM PURWAR",
+      "email": "Satyam.purwar.92@facebook.com",
+      "message": "nsssssssssssssss",
+      "id": 4
+    },
+    {
+      "name": "gopi das",
+      "email": "gopi.dgn@gmail.com",
+      "message": "SATYAJNBG",
+      "id": 5
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "username": "satyam_purwar",
+      "password": "1234",
+      "token": "bccccccccccccccccccccccc"
+    },
+    {
+      "id": 2,
+      "username": "mr_purwar",
+      "password": "3456",
+      "token": "jjjjjjjjjjjjjjjjjjjjjj"
+    },
+    {
+      "username": "satyam_purwar",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "username": "satyam_purwar",
+      "password": "1234",
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "username": "satyam_purwar",
+      "password": "1234",
+      "id": 10
+    },
+    {
+      "username": "satyam_purwar",
+      "password": "1234",
+      "id": 11
+    },
+    {
+      "username": "satyam_purwar",
+      "password": "1234",
+      "id": 12
+    }
+  ]
+}
